@@ -43,7 +43,6 @@ public class GamePanelToP extends JPanel{
     
     class TimerListener implements ActionListener
     {
-
         @Override
         public void actionPerformed(ActionEvent e) {
             player.update(.025, layout);
