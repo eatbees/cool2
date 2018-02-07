@@ -20,7 +20,7 @@ public class Screen {
         for(int i = 0; i < 25; i++){
             //top and bottom
             tiles[i][0] = true;
-            tiles[i][24] = true;
+            tiles[i][23] = true;
             
             //left and right
             tiles[0][i] = true;

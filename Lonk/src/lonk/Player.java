@@ -5,12 +5,15 @@
  */
 package lonk;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+
 
 /**
  *
@@ -19,6 +22,8 @@ import javax.imageio.ImageIO;
 public class Player {
     double x;
     double y;
+    double vx;
+    double vy;
     static Image idle;
     static Image idle1;
     static Image idle2;
@@ -68,6 +73,29 @@ public class Player {
     }
     
     void update(double time, Screen screen){
-        
+        //frame += 17 * time;
+        //if(dir == 0 && (int)frame > 6 || dir == 1 && (int)frame > 7 || (dir == 2 || dir == 3) && (int)frame > 3)
+        //{
+        //    frame = 0;
+        //}
+        if(!screen.collision(x + (vx * time), y - (vy * time)) && vy < 0)
+        {
+            y += vy * time;
+        }
+        if(!screen.collision(x + (vx * time), y - (vy * time)) && vx > 0)
+        {
+            x += vx * time;
+        }
+        else
+        {
+            vx = 0;
+            vy = 0;
+        }
+    }
+    
+    void draw(Graphics g)
+    {
+        g.setColor(Color.YELLOW);
+        g.fillRect((int)x, (int)y, 40, 40);
     }
 }
