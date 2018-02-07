@@ -20,5 +20,6 @@ public class GameWindow extends JFrame{
         add(panel);
         addKeyListener(panel.new KeyboardListener());
         setVisible(true);
+        panel.playSound();
     }
 }
