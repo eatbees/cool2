@@ -78,19 +78,19 @@ public class Player {
         //{
         //    frame = 0;
         //}
-        if(!screen.collision(x + (vx * time), y - (vy * time)) && vy < 0)
-        {
+        //if(!screen.collision(x + (vx * time), y - (vy * time)) && vy < 0)
+        //{
             y += vy * time;
-        }
-        if(!screen.collision(x + (vx * time), y - (vy * time)) && vx > 0)
-        {
+        //}
+        //if(!screen.collision(x + (vx * time), y - (vy * time)) && vx > 0)
+        //{
             x += vx * time;
-        }
-        else
-        {
-            vx = 0;
-            vy = 0;
-        }
+        //}
+        //else
+        //{
+            //vx = 0;
+            //vy = 0;
+        //}
     }
     
     void draw(Graphics g)
