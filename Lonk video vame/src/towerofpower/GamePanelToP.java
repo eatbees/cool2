@@ -95,6 +95,7 @@ public class GamePanelToP extends JPanel{
                 player.dir = 0;
                 player.vy = 300;
             }
+            player.frame = 0;
 }
         @Override
         public void keyReleased(KeyEvent e) {

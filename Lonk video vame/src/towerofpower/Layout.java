@@ -56,14 +56,16 @@ public class Layout {
      
      boolean Collision(double x, double y)
     {
-        
-        if(tiles[(int)x / 40][(int)y / 40] == true)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        //try{
+        //System.out.println("X:" + (int)x / 40);
+        //System.out.println("Y:" + (int)y / 40);
+        return tiles[(int)x / 40][(int)y / 40];
+        //}
+        //catch(ArrayIndexOutOfBoundsException e){
+        //    System.out.println(x);
+        //    System.out.println(y);
+        //    System.out.println();
+        //    return false;
+        //}
     }
 }

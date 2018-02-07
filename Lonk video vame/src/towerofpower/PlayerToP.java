@@ -73,12 +73,14 @@ public class PlayerToP {
     
     void update(double time, Layout layout)
     {
-        if(layout.Collision(x + vx * time, y) == false)
+        if(!layout.Collision(x + vx * time, y))
         {
+            System.out.println(vx * time);
             x += vx * time;
         }
-        if(layout.Collision(y + vy * time, x) == false)
+        if(!layout.Collision(y + vy * time, x))
         {
+            System.out.println(vy * time);
             y += vy * time;
         }
         frame += 17 * time;

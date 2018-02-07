@@ -16,7 +16,7 @@ public class GameWindowToP extends JFrame{
     GameWindowToP()
     {
         setTitle("Legend of Zelda: Link to the Past Knockoff");
-        setSize(1100, 900);
+        setSize(1100, 1000);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         GamePanelToP panel = new GamePanelToP();
         add(panel);
