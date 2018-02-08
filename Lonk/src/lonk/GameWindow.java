@@ -14,7 +14,8 @@ import javax.swing.JFrame;
 public class GameWindow extends JFrame{
     GameWindow(){
         setTitle("Lonk");
-        setSize(1015, 999); //something about jframe being bad
+        setResizable(false);
+        setSize(1005, 989); //something about jframe being bad
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         GamePanel panel = new GamePanel();
         add(panel);

@@ -15,9 +15,6 @@ import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineEvent;
-import javax.sound.sampled.LineEvent.Type;
-import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JPanel;
@@ -66,7 +63,6 @@ public class GamePanel extends JPanel{
         } catch(IOException | LineUnavailableException | UnsupportedAudioFileException ex) {
             System.out.println("Error with playing sound.");
         }
-        
     }
     
     class KeyboardListener implements KeyListener
@@ -82,33 +78,40 @@ public class GamePanel extends JPanel{
 
         @Override
         public void keyPressed(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_D)
+            if(e.getKeyCode() == KeyEvent.VK_J)
             {
-                player.dir = 2;
-                player.vx = 25;
-                player.update(0.25, screen);
-                d = true;
+                player.attack();
             }
-            if(e.getKeyCode() == KeyEvent.VK_A)
+            if(!player.attacking)
             {
-                player.dir = 3;
-                player.vx = -25;
-                player.update(0.25, screen);
-                a = true;
-            }
-            if(e.getKeyCode() == KeyEvent.VK_W)
-            {
-                player.dir = 1;
-                player.vy = -25;
-                player.update(0.25, screen);
-                w = true;
-            }
-            if(e.getKeyCode() == KeyEvent.VK_S)
-            {
-                player.dir = 0;
-                player.vy = 25;
-                player.update(0.25, screen);
-                s = true;
+                if(e.getKeyCode() == KeyEvent.VK_D)
+                {
+                    player.dir = 2;
+                    player.vx = 25;
+                    //player.update(0.25, screen);
+                    d = true;
+                }
+                if(e.getKeyCode() == KeyEvent.VK_A)
+                {
+                    player.dir = 3;
+                    player.vx = -25;
+                    //player.update(0.25, screen);
+                    a = true;
+                }
+                if(e.getKeyCode() == KeyEvent.VK_W)
+                {
+                    player.dir = 1;
+                    player.vy = -25;
+                    //player.update(0.25, screen);
+                    w = true;
+                }
+                if(e.getKeyCode() == KeyEvent.VK_S)
+                {
+                    player.dir = 0;
+                    player.vy = 25;
+                    //player.update(0.25, screen);
+                    s = true;
+                }
             }
             player.frame = 0;
 }
