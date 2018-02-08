@@ -78,7 +78,7 @@ public class GamePanel extends JPanel{
 
         @Override
         public void keyPressed(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_J)
+            if(e.getKeyCode() == KeyEvent.VK_J && !player.attacking)
             {
                 player.attack();
             }
@@ -114,7 +114,7 @@ public class GamePanel extends JPanel{
                 }
             }
             player.frame = 0;
-}
+        }
         @Override
         public void keyReleased(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_W)
